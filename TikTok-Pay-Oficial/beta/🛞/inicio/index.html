@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pesquisa – Campanha Bonus</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* opções */
+.rating-option {
+    margin: 10px;
+}
+
+/* botão */
+.continue-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* erro */
+#error-message {
+    color: red;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Como você avalia sua experiência geral no TikTok?</h2>
+<p>Selecione uma ou mais opções para continuar</p>
+
+<div class="rating-option">
+    <input type="checkbox"> Excelente
+</div>
+
+<div class="rating-option">
+    <input type="checkbox"> Boa
+</div>
+
+<div class="rating-option">
+    <input type="checkbox"> Regular
+</div>
+
+<div class="rating-option">
+    <input type="checkbox"> Ruim
+</div>
+
+<div class="continue-button" onclick="validateSelection()">Continuar</div>
+
+<div id="error-message">Selecione pelo menos uma opção</div>
+
+<script>
+function validateSelection() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const errorMessage = document.getElementById('error-message');
+
+    const isChecked = Array.from(checkboxes).some(c => c.checked);
+
+    if (isChecked) {
+        errorMessage.style.display = 'none';
+
+        // redireciona direto
+        window.location.href = "1/index.html";
+
+    } else {
+        errorMessage.style.display = 'block';
+    }
+}
+</script>
+
+</body>
+</html>

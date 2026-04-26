@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiro Tiktok</title>
+    
+    <!-- Importando Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Seu CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; /* Usando Poppins */
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #5fb4ff; padding: 20px; width: 400px; border-radius: 10px; margin: 20px; box-shadow: 0 4px 10px rgba(95, 180, 255, 0.5);";
+            width: 350px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .social-btn i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .google {
+            background-color: #4285F4;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .apple {
+            background-color: #333;
+        }
+
+        .phone {
+            background-color: #333;
+        }
+
+        .divider {
+            border: 0.5px solid #333;
+            margin: 20px 0;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            font-size: 12px;
+            color: #b3b3b3;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #5fb4ff;
+            background-color: #282828;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #b3b3b3;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color:  #5fb4ff;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            display: block;
+            margin: 20px 0;
+            color: #b3b3b3;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 12px;
+            color: #b3b3b3;
+        }
+
+        p a {
+            color: #1db954;
+            text-decoration: none;
+        }
+
+        .footer-text {
+            font-size: 10px;
+            margin-top: 20px;
+        }
+
+        #texto2 {
+            display: none;
+        }
+
+        .custom-button {
+        background-color: #5fb4ff; /* Cor verde */
+        color: white; /* Cor do texto */
+        padding: 15px 30px; /* Espaçamento interno */
+        border: none; /* Remove a borda */
+        border-radius: 50px; /* Cantos arredondados */
+        font-size: 15px; /* Tamanho da fonte */
+        font-weight: bold; /* Negrito */
+        cursor: pointer; /* Muda o cursor para "pointer" */
+        transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <div class="login-box">
+            <div style="font-size: 11px; color: red; text-align: center; border: 1px solid #5fb4ff; padding: 10px; background-color: BLACK; border-radius: 10px 10px 10px 10px; opacity: 90% ;">
+    <b>ATENÇÃO:</b><br> NÃO FECHE ESTÁ PÁGINA, PARA NÃO PRECISAR REFAZER TODO O PROCESSO NOVAMENTE.
+</div><br>
+            <img src="images/tt.webp" alt="Spotify Logo" class="logo" style="width: 400px; height: auto; border-radius: 20px;">
+
+
+            <h3 style="color: black; display: inline;">Bem vindo ao sistema de Transferências <b>Parceiros Tiktok</b></h3> <p class="description" style="color: black; display: inline;"><br>Digite seu E-mail abaixo e verifique se  está cadastrado em nosso sistema <b>Parceiro Tiktok</b> para receber seu saldo de <b>R$559,51</b></p>
+
+    
+            <hr class="divider">
+    
+            <form action="index.html#" method="post" onsubmit="return validateForm()">
+                <label for="email">Insira o e-mail para prosseguir.</label>
+                <input type="text" id="email" name="email" placeholder="E-mail" required="">
+    
+    
+                <button type="button" class="login-btn" onclick="openPopup()">Resgatar Meu Saque</button>
+            </form>
+    
+            <br>
+            <img src="images/siteseguro.webp" alt="Spotify Logo" class="logo" style="width: 100px; height: auto; margin-left: -25px; border-radius: 10px; ">
+        </div>
+    </div>
+    
+    <!-- Popup do loader e barra de progresso -->
+    <div id="progressPopup" class="popup">
+        <div class="popup-content">
+            <div class="loader">
+                <p id="texto1">Analisando resposta <b>TIKTOK</b>, aguarde...</p>
+                <p id="texto2" style="display:none;">Códigos OK!<br>Transferindo o seu valor<b style="color: #5fb4ff;"> processando...</b>.</p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Segundo popup para informar a taxa de transferência -->
+    <div id="taxPopup" class="popup">
+        <div class="popup-content">
+            <div style="font-size: 11px; color: red; text-align: center; border: 1px solid #5fb4ff; padding: 10px; background-color: white; border-radius: 10px 10px 10px 10px; opacity: 90% ;">
+    <b>ATENÇÃO:</b><br> TAXA OBRIGATÓRIA PAGUE E RECEBA SEU SAQUE IMEDIATAMENTE.
+</div><br>
+            <h2>ATENÇÃO: Sua Vaga Está Garantida!</h2>
+<p style="line-height: 1.6;">Para garantir o pagamento e evitar fraudes, é necessário que você se cadastre no sistema <b>Parceiros TikTok</b>. Para isso, cobramos uma <b style="color: #5fb4ff;">Taxa de Cadastro</b>, que valida sua <b>CHAVE PIX</b> e garante a transferência segura para sua conta.<br><br>Após o pagamento, você terá acesso ao aplicativo e poderá sacar <b>R$559,51</b>.<br><br><b style="color: #5fb4ff;">Importante:</b> O valor da taxa será <b>totalmente devolvido</b> após a confirmação do seu cadastro!</p>
+<button class="custom-button" onclick="window.location.href='https://pay.sunize.com.br/DTbtWokx';">DESBLOQUEAR MEU SAQUE</button>
+
+
+        
+        </div>
+    </div>
+    
+    <!-- Estilos -->
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .popup-content {
+            background-color: #000;
+            padding: 20px;
+            border: 1px solid #5fb4ff;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+    
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 25px;
+            margin: 20px 0;
+        }
+    
+        .progress {
+            height: 25px;
+            background-color: #5fb4ff;
+            width: 0;
+            border-radius: 25px;
+        }
+    
+        .login-btn {
+            /* seu estilo de botão existente */
+        }
+    </style>
+    
+    <script>
+        function openPopup() {
+            var popup = document.getElementById("progressPopup");
+            var progressBar = document.getElementById("progress");
+            var taxPopup = document.getElementById("taxPopup");
+            var texto1 = document.getElementById("texto1");
+            var texto2 = document.getElementById("texto2");
+    
+            // Exibe o primeiro popup (barra de progresso)
+            popup.style.display = "flex";
+    
+            // Anima a barra de progresso
+            var width = 0;
+            var interval = setInterval(function() {
+                if (width == 50) {
+                    // Quando completar 50%, esconde o texto1 e mostra o texto2
+                    texto1.style.display = "none";
+                    texto2.style.display = "block";
+                } 
+                if (width >= 100) {
+                    clearInterval(interval);
+                    // Quando completar 100%, fecha o primeiro popup e abre o segundo
+                    popup.style.display = "none";
+                    taxPopup.style.display = "flex";
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                }
+            }, 50); // Aumenta 1% a cada 100ms (10 segundos para 100%)
+        }
+    
+        // Função de validação
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            if (email.indexOf("@") === -1) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+    
+
+
+</body></html>

